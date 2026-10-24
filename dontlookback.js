@@ -31,7 +31,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpz_9q_aw7.js
+// include: /tmp/tmps6uk32bh.js
 if (!Module["expectedDataFileDownloads"]) Module["expectedDataFileDownloads"] = 0;
 
 Module["expectedDataFileDownloads"]++;
@@ -679,7 +679,7 @@ Module["expectedDataFileDownloads"]++;
   });
 }))();
 
-// end include: /tmp/tmpz_9q_aw7.js
+// end include: /tmp/tmps6uk32bh.js
 var programArgs = [];
 
 var thisProgram = "./this.program";
@@ -8560,7 +8560,7 @@ Module["FS_createLazyFile"] = FS_createLazyFile;
 // End JS library exports
 // end include: postlibrary.js
 var ASM_CONSTS = {
-  307162500: () => {
+  307162820: () => {
     if (typeof (Module["SDL3"]) === "undefined") {
       Module["SDL3"] = {};
     }
@@ -8576,7 +8576,7 @@ var ASM_CONSTS = {
       };
     }
   },
-  307162814: $0 => {
+  307163134: $0 => {
     var str = UTF8ToString($0) + "\n\n" + "Abort/Retry/Ignore/AlwaysIgnore? [ariA] :";
     var reply = window.prompt(str, "i");
     if (reply === null) {
@@ -8584,11 +8584,11 @@ var ASM_CONSTS = {
     }
     return reply.length === 1 ? reply.charCodeAt(0) : -1;
   },
-  307163029: () => {
+  307163349: () => {
     Module["SDL3"].camera = {};
   },
-  307163061: () => (navigator.mediaDevices === undefined) ? 0 : 1,
-  307163120: ($0, $1, $2, $3, $4) => {
+  307163381: () => (navigator.mediaDevices === undefined) ? 0 : 1,
+  307163440: ($0, $1, $2, $3, $4) => {
     const device = $0;
     const w = $1;
     const h = $2;
@@ -8662,7 +8662,7 @@ var ASM_CONSTS = {
       outcome(device, 0, 0, 0, 0);
     });
   },
-  307165426: () => {
+  307165746: () => {
     const SDL3 = Module["SDL3"];
     if ((typeof (SDL3) === "undefined") || (typeof (SDL3.camera) === "undefined") || (typeof (SDL3.camera.stream) === "undefined")) {
       return;
@@ -8670,7 +8670,7 @@ var ASM_CONSTS = {
     SDL3.camera.stream.getTracks().forEach(track => track.stop());
     SDL3.camera = {};
   },
-  307165677: ($0, $1, $2) => {
+  307165997: ($0, $1, $2) => {
     const w = $0;
     const h = $1;
     const rgba = $2;
@@ -8683,18 +8683,18 @@ var ASM_CONSTS = {
     HEAPU8.set(imgrgba, rgba);
     return 1;
   },
-  307166055: () => {
+  307166375: () => {
     if (typeof (Module["SDL3"]) !== "undefined") {
       Module["SDL3"].camera = undefined;
     }
   },
-  307166142: () => {
+  307166462: () => {
     Module["SDL3"].dummy_audio = {};
     Module["SDL3"].dummy_audio.timers = [];
     Module["SDL3"].dummy_audio.timers[0] = undefined;
     Module["SDL3"].dummy_audio.timers[1] = undefined;
   },
-  307166319: ($0, $1, $2, $3, $4) => {
+  307166639: ($0, $1, $2, $3, $4) => {
     var a = Module["SDL3"].dummy_audio;
     if (a.timers[$0] !== undefined) {
       clearInterval(a.timers[$0]);
@@ -8703,14 +8703,14 @@ var ASM_CONSTS = {
       dynCall("vi", $3, [ $4 ]);
     }, ($1 / $2) * 1e3);
   },
-  307166511: $0 => {
+  307166831: $0 => {
     var a = Module["SDL3"].dummy_audio;
     if (a.timers[$0] !== undefined) {
       clearInterval(a.timers[$0]);
     }
     a.timers[$0] = undefined;
   },
-  307166642: () => {
+  307166962: () => {
     if (typeof (AudioContext) !== "undefined") {
       return true;
     } else if (typeof (webkitAudioContext) !== "undefined") {
@@ -8718,7 +8718,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  307166789: () => {
+  307167109: () => {
     if ((typeof (navigator.mediaDevices) !== "undefined") && (typeof (navigator.mediaDevices.getUserMedia) !== "undefined")) {
       return true;
     } else if (typeof (navigator.webkitGetUserMedia) !== "undefined") {
@@ -8726,7 +8726,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  307167023: () => {
+  307167343: () => {
     var SDL3 = Module["SDL3"];
     if (typeof (SDL3.audio_playback) === "undefined") {
       SDL3.audio_playback = {};
@@ -8748,8 +8748,8 @@ var ASM_CONSTS = {
     }
     return (SDL3.audioContext !== undefined);
   },
-  307167602: () => Module["SDL3"].audioContext.sampleRate,
-  307167653: ($0, $1, $2, $3) => {
+  307167922: () => Module["SDL3"].audioContext.sampleRate,
+  307167973: ($0, $1, $2, $3) => {
     var SDL3 = Module["SDL3"];
     var have_microphone = function(stream) {
       if (SDL3.audio_recording.silenceTimer !== undefined) {
@@ -8791,7 +8791,7 @@ var ASM_CONSTS = {
       }, have_microphone, no_microphone);
     }
   },
-  307169494: ($0, $1, $2, $3) => {
+  307169814: ($0, $1, $2, $3) => {
     var SDL3 = Module["SDL3"];
     SDL3.audio_playback.scriptProcessorNode = SDL3.audioContext["createScriptProcessor"]($1, 0, $0);
     SDL3.audio_playback.scriptProcessorNode["onaudioprocess"] = function(e) {
@@ -8823,7 +8823,7 @@ var ASM_CONSTS = {
       SDL3.audio_playback.silenceTimer = setInterval(silence_callback, ($1 / SDL3.audioContext.sampleRate) * 1e3);
     }
   },
-  307170810: $0 => {
+  307171130: $0 => {
     var SDL3 = Module["SDL3"];
     if ($0) {
       if (SDL3.audio_recording.silenceTimer !== undefined) {
@@ -8857,7 +8857,7 @@ var ASM_CONSTS = {
       SDL3.audioContext = undefined;
     }
   },
-  307171966: ($0, $1) => {
+  307172286: ($0, $1) => {
     var SDL3 = Module["SDL3"];
     var buf = SDL3.CPtrToHeap32Index($0);
     var numChannels = SDL3.audio_playback.currentPlaybackBuffer["numberOfChannels"];
@@ -8871,7 +8871,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  307172499: ($0, $1) => {
+  307172819: ($0, $1) => {
     var SDL3 = Module["SDL3"];
     var numChannels = SDL3.audio_recording.currentRecordingBuffer.numberOfChannels;
     for (var c = 0; c < numChannels; ++c) {
@@ -8890,7 +8890,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  307173126: $0 => {
+  307173446: $0 => {
     let gamepads = navigator["getGamepads"]();
     if (!gamepads) {
       return 0;
@@ -8901,7 +8901,7 @@ var ASM_CONSTS = {
     }
     return 1;
   },
-  307173301: ($0, $1, $2) => {
+  307173621: ($0, $1, $2) => {
     let gamepads = navigator["getGamepads"]();
     if (!gamepads) {
       return 0;
@@ -8918,7 +8918,7 @@ var ASM_CONSTS = {
     });
     return 1;
   },
-  307173637: ($0, $1, $2, $3) => {
+  307173957: ($0, $1, $2, $3) => {
     var w = $0;
     var h = $1;
     var pixels = $2;
@@ -8949,7 +8949,7 @@ var ASM_CONSTS = {
     SDL3.ctx.putImageData(SDL3.image, 0, 0);
     return true;
   },
-  307174386: () => {
+  307174706: () => {
     var SDL3 = Module["SDL3"];
     SDL3["mouse_x"] = 0;
     SDL3["mouse_y"] = 0;
@@ -8975,7 +8975,7 @@ var ASM_CONSTS = {
       }
     });
   },
-  307175074: ($0, $1, $2, $3, $4) => {
+  307175394: ($0, $1, $2, $3, $4) => {
     var w = $0;
     var h = $1;
     var hot_x = $2;
@@ -8996,20 +8996,20 @@ var ASM_CONSTS = {
     stringToUTF8(url, urlBuf, url.length + 1);
     return urlBuf;
   },
-  307175732: $0 => {
+  307176052: $0 => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = UTF8ToString($0);
     }
   },
-  307175815: () => {
+  307176135: () => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = "none";
     }
   },
-  307175884: () => Module["SDL3"]["mouse_x"],
-  307175922: () => Module["SDL3"]["mouse_y"],
-  307175960: $0 => Module["SDL3"]["mouse_buttons"][$0],
-  307176008: $0 => {
+  307176204: () => Module["SDL3"]["mouse_x"],
+  307176242: () => Module["SDL3"]["mouse_y"],
+  307176280: $0 => Module["SDL3"]["mouse_buttons"][$0],
+  307176328: $0 => {
     var data = $0;
     document.sdlEventHandlerLockKeysCheck = function(event) {
       if ((event.key != "CapsLock") && (event.key != "NumLock") && (event.key != "ScrollLock")) {
@@ -9018,10 +9018,10 @@ var ASM_CONSTS = {
     };
     document.addEventListener("keydown", document.sdlEventHandlerLockKeysCheck);
   },
-  307176435: () => {
+  307176755: () => {
     document.removeEventListener("keydown", document.sdlEventHandlerLockKeysCheck);
   },
-  307176519: $0 => {
+  307176839: $0 => {
     var target = document;
     if (target) {
       target.sdlEventHandlerMouseButtonUpGlobal = function(event) {
@@ -9035,7 +9035,7 @@ var ASM_CONSTS = {
       target.addEventListener("pointerup", target.sdlEventHandlerMouseButtonUpGlobal);
     }
   },
-  307176880: $0 => {
+  307177200: $0 => {
     var SDL3 = Module["SDL3"];
     if (SDL3.makePointerEventCStruct === undefined) {
       SDL3.makePointerEventCStruct = function(left, top, event) {
@@ -9073,7 +9073,7 @@ var ASM_CONSTS = {
       };
     }
   },
-  307177872: $0 => {
+  307178192: $0 => {
     var id = UTF8ToString($0);
     try {
       var canvas = document.querySelector(id);
@@ -9083,23 +9083,23 @@ var ASM_CONSTS = {
     } catch (e) {}
     return false;
   },
-  307178038: () => document.hasFocus(),
-  307178070: () => {
+  307178358: () => document.hasFocus(),
+  307178390: () => {
     var target = document;
     if (target) {
       target.removeEventListener("pointerup", target.sdlEventHandlerMouseButtonUpGlobal);
       target.sdlEventHandlerMouseButtonUpGlobal = undefined;
     }
   },
-  307178252: () => document.body.clientWidth,
-  307178290: () => document.body.clientHeight,
-  307178329: () => window.innerWidth,
-  307178359: () => window.innerHeight,
-  307178390: () => window.outerWidth,
-  307178420: () => window.outerHeight,
-  307178451: () => window.pageXOffset,
-  307178482: () => window.pageYOffset,
-  307178513: ($0, $1) => {
+  307178572: () => document.body.clientWidth,
+  307178610: () => document.body.clientHeight,
+  307178649: () => window.innerWidth,
+  307178679: () => window.innerHeight,
+  307178710: () => window.outerWidth,
+  307178740: () => window.outerHeight,
+  307178771: () => window.pageXOffset,
+  307178802: () => window.pageYOffset,
+  307178833: ($0, $1) => {
     var target = document.querySelector(UTF8ToString($1));
     if (target) {
       var SDL3 = Module["SDL3"];
@@ -9137,7 +9137,7 @@ var ASM_CONSTS = {
       target.addEventListener("pointerup", target.sdlEventHandlerPointerGeneric);
     }
   },
-  307179901: ($0, $1, $2) => {
+  307180221: ($0, $1, $2) => {
     var target = document.querySelector(UTF8ToString($1));
     if (target) {
       var data = $0;
@@ -9217,7 +9217,7 @@ var ASM_CONSTS = {
       target.addEventListener("dragleave", SDL3.eventHandlerDropDragend);
     }
   },
-  307182268: $0 => {
+  307182588: $0 => {
     var target = document.querySelector(UTF8ToString($0));
     if (target) {
       var SDL3 = Module["SDL3"];
@@ -9245,7 +9245,7 @@ var ASM_CONSTS = {
       SDL3.eventHandlerDropDragend = undefined;
     }
   },
-  307183098: $0 => {
+  307183418: $0 => {
     var target = document.querySelector(UTF8ToString($0));
     if (target) {
       target.removeEventListener("pointerenter", target.sdlEventHandlerPointerEnter);
@@ -9260,7 +9260,7 @@ var ASM_CONSTS = {
       target.sdlEventHandlerPointerGeneric = undefined;
     }
   },
-  307183832: () => {
+  307184152: () => {
     if (!window.matchMedia) {
       return -1;
     }
@@ -9272,7 +9272,7 @@ var ASM_CONSTS = {
     }
     return -1;
   },
-  307184041: () => {
+  307184361: () => {
     if (typeof (Module["SDL3"]) !== "undefined") {
       var SDL3 = Module["SDL3"];
       SDL3.themeChangedMatchMedia.removeEventListener("change", SDL3.eventHandlerThemeChanged);
@@ -9280,14 +9280,14 @@ var ASM_CONSTS = {
       SDL3.eventHandlerThemeChanged = undefined;
     }
   },
-  307184294: () => window.innerWidth,
-  307184324: () => window.innerHeight,
-  307184355: $0 => {
+  307184614: () => window.innerWidth,
+  307184644: () => window.innerHeight,
+  307184675: $0 => {
     Module["requestFullscreen"] = function(lockPointer, resizeCanvas) {
       _requestFullscreenThroughSDL($0);
     };
   },
-  307184464: ($0, $1) => {
+  307184784: ($0, $1) => {
     var pngData = HEAPU8.buffer instanceof ArrayBuffer ? HEAPU8.subarray($0, $0 + $1) : HEAPU8.slice($0, $0 + $1);
     var blob = new Blob([ pngData ], {
       type: "image/png"
@@ -9305,12 +9305,12 @@ var ASM_CONSTS = {
     }
     link.href = url;
   },
-  307184957: () => {
+  307185277: () => {
     Module["requestFullscreen"] = function(lockPointer, resizeCanvas) {};
   },
-  307185031: () => window.innerWidth,
-  307185061: () => window.innerHeight,
-  307185092: $0 => {
+  307185351: () => window.innerWidth,
+  307185381: () => window.innerHeight,
+  307185412: $0 => {
     var canvas = document.querySelector(UTF8ToString($0));
     canvas.SDL3_original_position = canvas.style.position;
     canvas.SDL3_original_top = canvas.style.top;
@@ -9331,7 +9331,7 @@ var ASM_CONSTS = {
     canvas.style.top = "0";
     canvas.style.left = "0";
   },
-  307185790: () => {
+  307186110: () => {
     var div = document.getElementById("SDL3_fill_document_background_elements");
     if (div) {
       if (div.SDL3_canvas_nextsib) {
@@ -9348,7 +9348,7 @@ var ASM_CONSTS = {
       div.remove();
     }
   },
-  307186349: () => {
+  307186669: () => {
     if (window.matchMedia) {
       var SDL3 = Module["SDL3"];
       SDL3.eventHandlerThemeChanged = function(event) {
@@ -9358,7 +9358,7 @@ var ASM_CONSTS = {
       SDL3.themeChangedMatchMedia.addEventListener("change", SDL3.eventHandlerThemeChanged);
     }
   },
-  307186671: ($0, $1, $2, $3, $4) => {
+  307186991: ($0, $1, $2, $3, $4) => {
     var title = UTF8ToString($0);
     var message = UTF8ToString($1);
     var background = UTF8ToString($2);
@@ -9378,7 +9378,7 @@ var ASM_CONSTS = {
     dialog.append(p);
     dialog.showModal();
   },
-  307187212: ($0, $1, $2, $3, $4, $5, $6, $7) => {
+  307187532: ($0, $1, $2, $3, $4, $5, $6, $7) => {
     var dialog_id = UTF8ToString($0);
     var text = UTF8ToString($1);
     var responseId = $2;
@@ -9419,7 +9419,7 @@ var ASM_CONSTS = {
     dialog.append(button);
     return true;
   },
-  307188221: $0 => {
+  307188541: $0 => {
     var dialog_id = UTF8ToString($0);
     var dialog = document.getElementById(dialog_id);
     if (!dialog) {
@@ -9427,7 +9427,7 @@ var ASM_CONSTS = {
     }
     return dialog.open;
   },
-  307188359: $0 => {
+  307188679: $0 => {
     var dialog_id = UTF8ToString($0);
     var dialog = document.getElementById(dialog_id);
     if (!dialog) {
@@ -9439,7 +9439,7 @@ var ASM_CONSTS = {
       return 0;
     }
   },
-  307188541: ($0, $1) => {
+  307188861: ($0, $1) => {
     alert(UTF8ToString($0) + "\n\n" + UTF8ToString($1));
   }
 };
@@ -9482,13 +9482,13 @@ function SDL_IsEmscriptenJoystickXInput(device_index) {
 }
 
 // Imports from the Wasm binary.
-var _main, _malloc, _free, _SDL_free, _SDL_malloc, _SDL_calloc, _SDL_realloc, _SDLEmscriptenCameraPermissionOutcome, _SDLEmscriptenThreadIterate, _Emscripten_HandlePointerEnter, _Emscripten_HandlePointerLeave, _Emscripten_HandlePointerGeneric, _Emscripten_HandleMouseButtonUpGlobal, _Emscripten_SendDragEvent, _Emscripten_SendDragCompleteEvent, _Emscripten_SendDragTextEvent, _Emscripten_SendDragFileEvent, _Emscripten_HandleLockKeysCheck, _Emscripten_SendSystemThemeChangedEvent, _requestFullscreenThroughSDL, _Emscripten_force_free, ___funcs_on_exit, _emscripten_builtin_memalign, _setThrew, __emscripten_stack_restore, __emscripten_stack_alloc, _emscripten_stack_get_current, __ZN6__asan9FakeStack17AddrIsInFakeStackEm, __ZN6__asan9FakeStack8AllocateEmmm, ___asan_loadN, ___asan_storeN, ___lsan_disable, ___lsan_enable, dynCall_vi, dynCall_iii, dynCall_ii, dynCall_viii, dynCall_vii, dynCall_viiiii, dynCall_viiiiiiii, dynCall_iiiii, dynCall_iiii, dynCall_viddiddi, dynCall_iiiiii, dynCall_v, dynCall_i, dynCall_viiii, dynCall_vidiiii, dynCall_vd, dynCall_jiij, dynCall_viiif, dynCall_viiid, dynCall_viiifi, dynCall_jiji, dynCall_ji, dynCall_iiiiiiii, dynCall_iiiiiiiiii, dynCall_iiiiiiiiiiiiiiff, dynCall_iiiiiiiii, dynCall_viiiiiii, dynCall_viiiiiiiiiii, dynCall_iiiiiidiiff, dynCall_viiiiii, dynCall_vffff, dynCall_vf, dynCall_viiiiiiiii, dynCall_vff, dynCall_vfi, dynCall_viif, dynCall_vif, dynCall_viff, dynCall_vifff, dynCall_viffff, dynCall_vfff, dynCall_idi, dynCall_dd, dynCall_ifi, dynCall_ff, dynCall_iiiij, dynCall_iidiiiii, dynCall_jii, _asyncify_start_unwind, _asyncify_stop_unwind, _asyncify_start_rewind, _asyncify_stop_rewind, memory, __indirect_function_table, wasmMemory;
+var _main, _SDL_free, _malloc, _free, _SDL_malloc, _SDL_calloc, _SDL_realloc, _SDLEmscriptenCameraPermissionOutcome, _SDLEmscriptenThreadIterate, _Emscripten_HandlePointerEnter, _Emscripten_HandlePointerLeave, _Emscripten_HandlePointerGeneric, _Emscripten_HandleMouseButtonUpGlobal, _Emscripten_SendDragEvent, _Emscripten_SendDragCompleteEvent, _Emscripten_SendDragTextEvent, _Emscripten_SendDragFileEvent, _Emscripten_HandleLockKeysCheck, _Emscripten_SendSystemThemeChangedEvent, _requestFullscreenThroughSDL, _Emscripten_force_free, ___funcs_on_exit, _emscripten_builtin_memalign, _setThrew, __emscripten_stack_restore, __emscripten_stack_alloc, _emscripten_stack_get_current, __ZN6__asan9FakeStack17AddrIsInFakeStackEm, __ZN6__asan9FakeStack8AllocateEmmm, ___asan_loadN, ___asan_storeN, ___lsan_disable, ___lsan_enable, dynCall_vi, dynCall_iii, dynCall_ii, dynCall_viii, dynCall_vii, dynCall_viiiii, dynCall_viiiiiiii, dynCall_iiiii, dynCall_iiii, dynCall_viddiddi, dynCall_iiiiii, dynCall_v, dynCall_i, dynCall_viiii, dynCall_vidiiii, dynCall_vd, dynCall_jiij, dynCall_viiif, dynCall_viiid, dynCall_viiifi, dynCall_jiji, dynCall_ji, dynCall_iiiiiiii, dynCall_iiiiiiiiii, dynCall_iiiiiiiiiiiiiiff, dynCall_iiiiiiiii, dynCall_viiiiiii, dynCall_viiiiiiiiiii, dynCall_iiiiiidiiff, dynCall_viiiiii, dynCall_vffff, dynCall_vf, dynCall_viiiiiiiii, dynCall_vff, dynCall_vfi, dynCall_viif, dynCall_vif, dynCall_viff, dynCall_vifff, dynCall_viffff, dynCall_vfff, dynCall_idi, dynCall_dd, dynCall_ifi, dynCall_ff, dynCall_iiiij, dynCall_iidiiiii, dynCall_jii, _asyncify_start_unwind, _asyncify_stop_unwind, _asyncify_start_rewind, _asyncify_stop_rewind, memory, __indirect_function_table, wasmMemory;
 
 function assignWasmExports(wasmExports) {
   _main = Module["_main"] = wasmExports["__main_argc_argv"];
+  _SDL_free = Module["_SDL_free"] = wasmExports["SDL_free"];
   _malloc = wasmExports["malloc"];
   _free = wasmExports["free"];
-  _SDL_free = Module["_SDL_free"] = wasmExports["SDL_free"];
   _SDL_malloc = Module["_SDL_malloc"] = wasmExports["SDL_malloc"];
   _SDL_calloc = Module["_SDL_calloc"] = wasmExports["SDL_calloc"];
   _SDL_realloc = Module["_SDL_realloc"] = wasmExports["SDL_realloc"];
